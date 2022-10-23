@@ -1,0 +1,10 @@
+@import '../../index.scss';
+
+.nav {
+  height: 5rem;
+  width: 100%;
+  max-width: $max-width;
+  margin: auto;
+  padding-inline: 1rem;
+  scroll-snap-align: start;
+}

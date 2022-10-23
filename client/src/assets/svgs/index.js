@@ -1,0 +1,1 @@
+export { ReactComponent as BannerSvg } from './bannerImage.svg'

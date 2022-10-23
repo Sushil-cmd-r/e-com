@@ -1,0 +1,15 @@
+@import './index.scss';
+
+.app {
+  width: 100%;
+  height: 100%;
+  background-image: $bg-grad;
+  color: $text-color;
+
+  &-container {
+    max-width: $max-width;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+}
