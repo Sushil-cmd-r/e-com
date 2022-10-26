@@ -4,7 +4,7 @@
 .reviewCard {
   @include glass-grad;
   height: clamp(200px, 65%, 500px);
-  width: clamp(300px, 80%, 600px);
+  width: clamp(300px, 95%, 600px);
   border-radius: 15px;
   padding: 3rem;
   position: absolute;
