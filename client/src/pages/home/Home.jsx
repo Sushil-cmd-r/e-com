@@ -1,11 +1,11 @@
 import './home.scss'
-import { Banner, Filter, Reviews } from '../../containers'
+import { Banner, Products, Reviews } from '../../containers'
 
 const Home = () => {
   return (
     <main className='home'>
       <Banner />
-      <Filter />
+      <Products />
       <Reviews />
     </main>
   )

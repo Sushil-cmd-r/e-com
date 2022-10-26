@@ -26,6 +26,15 @@ $bg-grad: linear-gradient(-240.32deg,
     #040d1f 100.83%);
 $filter: drop-shadow(0px 0px 2px rgb(244, 175, 175)) drop-shadow(0px 0px 7px #f745d0) drop-shadow(0px 0px 10px #e380ff) drop-shadow(0px 0px 20px #914dff) drop-shadow(0px 0px 20px #4713f5);
 
+@mixin glass-grad() {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 $max-width: 1280px;
 $nav-h: 5rem;
 $tablet: 560px;
