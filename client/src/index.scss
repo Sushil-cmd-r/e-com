@@ -9,6 +9,11 @@
   font-family: 'Orbitron', sans-serif;
 }
 
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
 html {
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -25,6 +30,14 @@ $bg-grad: linear-gradient(-240.32deg,
     #051225 81.89%,
     #040d1f 100.83%);
 $filter: drop-shadow(0px 0px 2px rgb(244, 175, 175)) drop-shadow(0px 0px 7px #f745d0) drop-shadow(0px 0px 10px #e380ff) drop-shadow(0px 0px 20px #914dff) drop-shadow(0px 0px 20px #4713f5);
+$gold-grad: linear-gradient(to right,
+    #ffd500 0,
+    #cb9b51 22%,
+    #f6e27a 45%,
+    #fcf484 50%,
+    #f6e27a 55%,
+    #cb9b51 78%,
+    #ffd500 100%);
 
 @mixin glass-grad() {
   background: rgba(255, 255, 255, 0.2);
