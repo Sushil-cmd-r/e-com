@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 // Components
 import { Navbar, Footer } from './components'
 // Pages
-import { Auth, Home, Details, Products } from './pages'
+import { Auth, Home, Details } from './pages'
 
 const App = () => {
   return (
@@ -13,7 +13,6 @@ const App = () => {
         <Routes>
           <Route index element={<Home />} />
           <Route path='/auth' element={<Auth />} />
-          <Route path='/products' element={<Products />} />
           <Route path='/:id' element={<Details />} />
         </Routes>
       </div>

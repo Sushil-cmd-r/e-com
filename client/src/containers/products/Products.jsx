@@ -1,6 +1,7 @@
 import './products.scss'
 import Product from '../../components/product/Product'
 import { products } from '../../constants/products'
+import { Link } from 'react-router-dom'
 
 const Products = () => {
   return (
@@ -10,7 +11,9 @@ const Products = () => {
       </div>
       <div className="products-list">
         {products.map((elm, idx) => (
-          < Product key={idx} data={elm} />
+          <Link to='/:id' className='link' key={idx}>
+            < Product data={elm} />
+          </Link>
         ))}
       </div>
     </section>
