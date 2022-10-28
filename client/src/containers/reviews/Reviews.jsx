@@ -1,7 +1,7 @@
 import './reviews.scss'
 import { useState } from 'react';
 import { Left, Right } from '../../assets/svgs'
-import ReviewCard from '../../components/review/ReviewCard'
+import Slider from '../../components/slider/Slider';
 
 const Reviews = () => {
   const [current, setCurrent] = useState(2);
@@ -20,11 +20,7 @@ const Reviews = () => {
       </div>
       <div className="reviews-cards">
         <Left className={`icon-left`} onClick={prevSlide} />
-        {
-          [...Array(5)].map((e, i) => (
-            <ReviewCard key={i} index={i} current={current} />
-          ))
-        }
+        <Slider current={current} />
         <Right className={`icon-right`} onClick={nextSlide} />
       </div>
     </section>
