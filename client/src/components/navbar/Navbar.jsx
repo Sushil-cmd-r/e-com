@@ -22,7 +22,7 @@ const Navbar = () => {
             <a href='#products' className='link'>Explore</a>
           </div>
           <div className="nav-link">
-            <Link to='/list' className='link'>Create</Link>
+            <Link to='/create' className='link'>Create</Link>
           </div>
           <div className="nav-link">
             <Link to='/list' className='link'>Log In</Link>
