@@ -1,9 +1,7 @@
 @import '../../index.scss';
 
 .products {
-  // height: min(100vh, 760px);
   height: 100%;
-  min-height: 760px;
   width: 100%;
   scroll-snap-align: start;
   padding: 1rem 2rem;
@@ -28,6 +26,10 @@
     grid-template-columns: repeat(1, 1fr);
 
     @media screen and (min-width:$tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width:$lg-tablet) {
       grid-template-columns: repeat(3, 1fr);
     }
 

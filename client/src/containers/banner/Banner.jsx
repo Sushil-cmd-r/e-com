@@ -9,8 +9,10 @@ const Banner = () => {
           <h1>Discover New Products</h1>
           <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, adipisci?</h2>
         </div>
-        <div className="banner-search">
-          search
+        <div className="banner-connect">
+          <button>
+            Connect Wallet
+          </button>
         </div>
       </div>
       <div className="banner-img">

@@ -11,7 +11,7 @@ const Products = () => {
       </div>
       <div className="products-list">
         {products.map((elm, idx) => (
-          <Link to='/:id' className='link' key={idx}>
+          <Link to='/:id' className='link' key={idx} style={{ height: '100%', width: '100%' }}>
             < Product data={elm} />
           </Link>
         ))}

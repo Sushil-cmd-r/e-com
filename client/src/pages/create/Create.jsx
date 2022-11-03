@@ -1,6 +1,5 @@
 import './create.scss'
 import { placeholder } from '../../assets/images'
-import { Close } from '../../assets/svgs'
 import { useState, useRef } from "react";
 
 const Create = () => {

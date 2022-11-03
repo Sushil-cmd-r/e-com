@@ -1,7 +1,19 @@
 import './details.scss'
 import { bag } from '../../assets/images'
+import { AuthContext, ModalContext } from '../../context/'
+import { useContext } from 'react'
 
 const Details = () => {
+  const { auth } = useContext(AuthContext)
+  const { setMessage, open } = useContext(ModalContext)
+
+  const handleBuy = () => {
+    if (!auth.user) {
+      setMessage('Please Log In First')
+      open()
+    }
+  }
+
   return (
     <main className='details'>
       <div className="details-container">
@@ -33,7 +45,7 @@ const Details = () => {
               200
             </span>
           </div>
-          <button className="buy">
+          <button className="buy" onClick={handleBuy}>
             Buy Now
           </button>
         </div>

@@ -93,19 +93,19 @@
     }
 
     .buy {
-      background: linear-gradient(-240.32deg,
-          #2c185b 36.02%,
-          #081e3a 50.45%,
-          #051225 81.89%,
-        );
+      background: #2c185b;
       color: $text-color;
-      padding: 1rem 0;
+      padding: 1rem;
       font-size: 1.3rem;
       font-weight: 600;
-      border-radius: 5rem;
-      border: none;
+      border-radius: 15px;
+      border: 0.5px solid #3c0576;
       outline: none;
       cursor: pointer;
+
+      &:hover {
+        background: #081e3a;
+      }
     }
   }
 }

@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, Close } from '../../assets/svgs'
 import './navbar.scss'
+import { AuthContext } from '../../context/'
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState('false')
+  const { auth, openLogin } = useContext(AuthContext)
 
   return (
     <nav className='nav'>
@@ -24,12 +26,21 @@ const Navbar = () => {
           <div className="nav-link">
             <Link to='/create' className='link'>Create</Link>
           </div>
-          <div className="nav-link">
-            <Link to='/list' className='link'>Log In</Link>
-          </div>
-          <div className="nav-link">
-            <Link to='/list' className='link'>Register</Link>
-          </div>
+          {
+            !auth.user ? (
+              <>
+                <div className="nav-link">
+                  <Link className='link' onClick={openLogin}>Log In</Link>
+                </div>
+                <div className="nav-link">
+                  <Link className='link' onClick={openLogin}>Register</Link>
+                </div>
+              </>
+            ) :
+              <div className="nav-link">
+                <Link className="link">Logged In</Link>
+              </div>
+          }
         </div>
       </div>
     </nav >

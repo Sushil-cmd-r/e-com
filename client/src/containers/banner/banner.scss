@@ -4,6 +4,7 @@
   // height: min(calc(100vh - $nav-h), calc(760px - $nav-h));
   width: 100%;
   padding: 2rem 1rem;
+  padding-bottom: 0;
   display: grid;
   grid-template-rows: 1fr 2fr;
   gap: 1rem;
@@ -57,6 +58,28 @@
     h2 {
       font-size: clamp(1rem, 2vw, 1.5rem);
       margin-bottom: 1%;
+    }
+
+  }
+
+  &-connect {
+    margin-block: 1rem;
+
+    &>button {
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $gold-grad;
+      // background: #2c185b;
+      color: #2c185b;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 15px;
+      border: 0.5px solid #081e3a;
+      outline: none;
+      cursor: pointer;
+
+      @media screen and (min-width:$tablet) {
+        font-size: 1.5rem;
+      }
     }
   }
 
