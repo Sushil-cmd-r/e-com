@@ -27,7 +27,7 @@ const getAll = async (req, res) => {
 
 // create Product
 const create = async (req, res) => {
-  const { name, email, price, description, owner } = req.body
+  const { name, email, price, description, owner, walletAd } = req.body
   const image = req?.file;
   let img = ""
   if (image) {
@@ -36,7 +36,7 @@ const create = async (req, res) => {
   }
   try {
     const product = await Product.create({
-      name, description, price, owner, image: img
+      name, description, price, owner, image: img, walletAd
     })
     const user = await User.findOne({ email });
     user.created.push(product._id);
