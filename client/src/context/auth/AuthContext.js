@@ -10,7 +10,9 @@ const INITIAL_STATE = {
 }
 
 export const AuthProvider = ({ children }) => {
+  // User state control
   const [auth, dispatch] = useReducer(authReducers, INITIAL_STATE)
+  // Modal Control
   const [loginModal, setLoginModal] = useState(false)
   const openLogin = () => setLoginModal(true)
   const closeLogin = () => setLoginModal(false)
