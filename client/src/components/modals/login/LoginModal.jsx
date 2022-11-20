@@ -1,4 +1,4 @@
-import { useContext, useState, useRef, useEffect } from 'react'
+import { useContext, useState, useRef } from 'react'
 import { AuthContext } from '../../../context'
 import Backdrop from '../../backdrop/Backdrop'
 import './loginModal.scss'
@@ -53,10 +53,6 @@ const LoginModal = () => {
 
     return;
   }
-
-  useEffect(() => {
-    console.log(auth)
-  }, [auth])
 
   return (
     <Backdrop onClick={closeLogin}>

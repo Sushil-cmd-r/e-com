@@ -13,6 +13,18 @@ const getUser = async (req, res) => {
   })
 }
 
+const check = async (req, res) => {
+  const { email, owner } = req.body;
+  res.status(201).json({
+    results: 0,
+    data: {
+      email, userName: owner,
+    },
+    success: true
+  });
+  return
+}
+
 const login = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -29,7 +41,7 @@ const login = async (req, res) => {
     const userName = `${user.firstName} ${user.lastName}`;
 
     const token = createToken({ email, userName });
-    res.cookie('jwt', token, { maxAge: 60 * 60 * 1000 });
+    res.cookie('jwt', token, { maxAge: 60 * 60 * 1000, sameSite: 'strict' });
     res.status(201).json({
       results: 0,
       data: {
@@ -69,7 +81,7 @@ const signup = async (req, res) => {
     const userName = `${firstName} ${lastName}`;
     // create jwt and send it to user as cookie
     const token = createToken({ email, userName });
-    res.cookie('jwt', token, { maxAge: 60 * 60 * 1000 });
+    res.cookie('jwt', token, { maxAge: 60 * 60 * 1000, sameSite: 'strict' });
 
     res.status(201).json({
       results: 0,
@@ -95,4 +107,4 @@ const logout = (req, res) => {
   res.sendStatus(200);
 }
 
-module.exports = { getUser, login, signup, logout }
+module.exports = { check, getUser, login, signup, logout }

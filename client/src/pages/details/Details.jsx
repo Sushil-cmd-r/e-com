@@ -1,5 +1,5 @@
 import './details.scss'
-import { AuthContext, DataContext, ModalContext } from '../../context/'
+import { AuthContext, DataContext, ModalContext, TransactionContext } from '../../context/'
 import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -7,27 +7,36 @@ const Details = () => {
   const { auth } = useContext(AuthContext)
   const { products } = useContext(DataContext)
   const { setMessage, open } = useContext(ModalContext)
+  const { buy, isLoading } = useContext(TransactionContext)
   const [product, setProduct] = useState({})
 
   const { id } = useParams();
 
   useEffect(() => {
-    setProduct(products.data.find(p => p._id == id))
-  }, [product])
+    setProduct(products.data.find(p => p._id === id))
+  }, [])
 
 
-  const handleBuy = () => {
+  const handleBuy = async () => {
     if (!auth.user) {
       setMessage('Please Log In First')
       open()
+      return
     }
+
+    try {
+      buy(product.walletAd, product.name, product._id, product.price);
+    } catch (err) {
+      console.log(err.message)
+    }
+
   }
 
   return (
     <main className='details'>
       <div className="details-container">
         <div className="details-image">
-          <img src={product.image} alt="bag" />
+          <img src={product?.image} alt="bag" />
         </div>
         <div className="details-info">
           <div className="detail">
@@ -35,7 +44,7 @@ const Details = () => {
               Product Name:
             </span>
             <span className="value">
-              {product.name}
+              {product?.name}
             </span>
           </div>
           <div className="detail">
@@ -43,7 +52,7 @@ const Details = () => {
               Description:
             </span>
             <span className="value description">
-              {product.description}
+              {product?.description}
             </span>
           </div>
           <div style={{ display: 'flex', gap: '3rem' }}>
@@ -52,7 +61,7 @@ const Details = () => {
                 Price:
               </span>
               <span className="value">
-                {product.price}
+                {product?.price}
               </span>
             </div>
             <div className="detail">
@@ -60,12 +69,12 @@ const Details = () => {
                 Current Owner:
               </span>
               <span className="value ">
-                {product.owner}
+                {product?.owner}
               </span>
             </div>
           </div>
           <button className="buy" onClick={handleBuy}>
-            Buy Now
+            {isLoading ? "Loading..." : 'Buy Now'}
           </button>
         </div>
       </div>

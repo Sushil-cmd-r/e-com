@@ -2,9 +2,13 @@ const jwt = require('jsonwebtoken')
 
 const requireAuth = async (req, res, next) => {
   const token = req.cookies?.jwt;
+  const id = req.body;
+
+  console.log(id)
   if (!token) {
+
     console.log('Unauthorized')
-    res.json({
+    res.status(403).json({
       results: 0,
       data: {
         error: "Unauthorized",

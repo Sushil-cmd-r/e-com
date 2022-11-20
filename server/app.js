@@ -31,9 +31,10 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions))
+
+app.use(cookieParser())
 app.use(express.json())
 // app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cookieParser())
 app.use(morgan('dev'))
 
 const VERSION = process.env.VERSION;

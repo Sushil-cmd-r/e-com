@@ -64,6 +64,12 @@
 
   &-connect {
     margin-block: 1rem;
+    display: flex;
+    gap: 1rem;
+
+    // @media screen and (max-width:$tablet) {
+    //   flex-direction: column;
+    // }
 
     &>button {
       background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $gold-grad;
@@ -79,6 +85,7 @@
 
       @media screen and (min-width:$tablet) {
         font-size: 1.5rem;
+        flex-direction: column;
       }
     }
   }

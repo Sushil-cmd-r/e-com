@@ -21,7 +21,7 @@ const Products = () => {
     } catch (err) {
       console.error(err);
     }
-  }, [])
+  }, [dispatch])
 
   return (
     <section className='products' id='products'>

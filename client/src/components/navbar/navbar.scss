@@ -28,7 +28,7 @@
     &:hover {
       cursor: pointer;
       background-image: $gold-grad;
-      color: transparent;
+      // color: transparent;
       background-clip: text;
     }
   }
@@ -108,5 +108,30 @@
       color: transparent;
       background-clip: text;
     }
+
+
   }
+}
+
+.account {
+  position: relative;
+  z-index: 99999999;
+
+  &-options {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 200px;
+    background-color: red;
+    right: 0;
+    z-index: 99999999;
+
+    h6 {
+      padding: 1rem;
+    }
+  }
+
+
+
 }

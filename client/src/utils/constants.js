@@ -1,14 +1,8 @@
-export const contractAddress = '0x5fbdb2315678afecb367f032d93f642f64180aa3'
+export const contractAddress = '0x463fc7D1E3CF7cEA04855b50255cba0E6EC157E1'
 export const abi = [
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "balance",
+    "inputs": [],
+    "name": "getBalance",
     "outputs": [
       {
         "internalType": "uint256",
@@ -130,4 +124,3 @@ export const abi = [
     "type": "function"
   }
 ]
-

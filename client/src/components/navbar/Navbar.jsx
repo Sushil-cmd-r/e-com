@@ -1,12 +1,29 @@
 import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, Close } from '../../assets/svgs'
+import { Menu, Close, Account } from '../../assets/svgs'
 import './navbar.scss'
-import { AuthContext } from '../../context/'
+import { AuthContext, ModalContext, TransactionContext } from '../../context/'
+import { logout } from '../../api'
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState('false')
   const { auth, openLogin } = useContext(AuthContext)
+  const { setMessage, open } = useContext(ModalContext)
+  const { walletAddress } = useContext(TransactionContext)
+
+  const handleLogout = async () => {
+    try {
+      if (walletAddress != '') {
+        setMessage("Please Disconnect Wallet First")
+        open();
+        return
+      }
+      await logout();
+      window.location.reload();
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
     <nav className='nav'>
@@ -38,7 +55,9 @@ const Navbar = () => {
               </>
             ) :
               <div className="nav-link">
-                <Link className="link">Logged In</Link>
+                <div className="account" onClick={handleLogout}>
+                  <Account />
+                </div>
               </div>
           }
         </div>
