@@ -25,12 +25,12 @@ mongoose.connect(MONGO_URI)
   })
 
 // Middlewares
-const corsOptions = {
-  origin: ["http://localhost:3000", "http://localhost:3001"],
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions))
+// const corsOptions = {
+//   origin: ["http://localhost:3000", "http://localhost:3001"],
+//   credentials: true,
+//   optionSuccessStatus: 200,
+// };
+app.use(cors())
 
 app.use(cookieParser())
 app.use(express.json())
