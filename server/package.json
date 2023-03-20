@@ -1,14 +1,14 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "engines": {
     "node": "14.x"
   },
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app",
-    "start": "node app"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

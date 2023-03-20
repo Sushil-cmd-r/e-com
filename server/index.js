@@ -38,8 +38,8 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 const VERSION = process.env.VERSION;
-const api = `/api/v${VERSION}`
+// const api = `/api/v1`
 
 // Routes
-app.use(`${api}/auth`, authRoutes)
-app.use(`${api}/product`, productRoutes)
+app.use(`/auth`, authRoutes)
+app.use(`/product`, productRoutes)
